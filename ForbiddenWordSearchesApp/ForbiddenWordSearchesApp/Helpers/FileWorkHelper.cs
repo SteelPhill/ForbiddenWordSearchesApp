@@ -30,7 +30,6 @@ public static class FileWorkHelper
         catch (Exception)
         {
             fileCount--;
-            // ignore
         }
 
         try

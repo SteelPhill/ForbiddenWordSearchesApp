@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ForbiddenWordSearchesApp"
         mc:Ignorable="d"
-                Title="Поиск запрещенных слов"
-        Height="700"
+        Title="Поиск запрещенных слов"
+        Height="550"
         Width="530"
-        MinHeight="700"
+        MinHeight="550"
         MinWidth="530"
         WindowStartupLocation="CenterScreen"
         Background="DarkGray"
@@ -16,7 +16,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -34,7 +34,7 @@
                 <TextBlock x:Name="ResultTextBlock"
 					       HorizontalAlignment="Stretch"
                            VerticalAlignment="Stretch"
-                           TextAlignment="Left"
+                           TextAlignment="Center"
                            Margin="5"
                            Padding="5"
                            Background="White" />

@@ -1,4 +1,4 @@
-﻿namespace ForbiddenWordSearchesApp;
+﻿namespace ForbiddenWordSearchesApp.Domain.Entities;
 
 public class ForbiddenWord
 {

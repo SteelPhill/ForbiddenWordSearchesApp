@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35728.132 d17.12
+VisualStudioVersion = 17.12.35728.132
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForbiddenWordSearchesApp", "ForbiddenWordSearchesApp\ForbiddenWordSearchesApp.csproj", "{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForbiddenWordSearchesApp.Domain", "ForbiddenWordSearchesApp.Domain\ForbiddenWordSearchesApp.Domain.csproj", "{8AC54F2D-C585-4375-BD58-29FC29195646}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AC54F2D-C585-4375-BD58-29FC29195646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AC54F2D-C585-4375-BD58-29FC29195646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AC54F2D-C585-4375-BD58-29FC29195646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AC54F2D-C585-4375-BD58-29FC29195646}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

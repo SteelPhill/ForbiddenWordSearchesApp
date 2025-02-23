@@ -1,28 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}|ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp.csproj|d:\\repositories\\forbiddenwordsearchesapp\\forbiddenwordsearchesapp\\forbiddenwordsearchesapp\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}|ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp.csproj|solutionrelative:forbiddenwordsearchesapp\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}|ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp.csproj|d:\\repositories\\forbiddenwordsearchesapp\\forbiddenwordsearchesapp\\forbiddenwordsearchesapp\\helpers\\fileworkhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}|ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp.csproj|solutionrelative:forbiddenwordsearchesapp\\helpers\\fileworkhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}|ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp.csproj|d:\\repositories\\forbiddenwordsearchesapp\\forbiddenwordsearchesapp\\forbiddenwordsearchesapp\\forbiddenword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}|ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp.csproj|solutionrelative:forbiddenwordsearchesapp\\forbiddenword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}|ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp.csproj|d:\\repositories\\forbiddenwordsearchesapp\\forbiddenwordsearchesapp\\forbiddenwordsearchesapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}|ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp.csproj|solutionrelative:forbiddenwordsearchesapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}|ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp.csproj|d:\\repositories\\forbiddenwordsearchesapp\\forbiddenwordsearchesapp\\forbiddenwordsearchesapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}|ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp.csproj|solutionrelative:forbiddenwordsearchesapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -30,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,70 +18,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Constants.cs",
-              "DocumentMoniker": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\Constants.cs",
-              "RelativeDocumentMoniker": "ForbiddenWordSearchesApp\\Constants.cs",
-              "ToolTip": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\Constants.cs",
-              "RelativeToolTip": "ForbiddenWordSearchesApp\\Constants.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-23T04:34:15.476Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FileWorkHelper.cs",
-              "DocumentMoniker": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\Helpers\\FileWorkHelper.cs",
-              "RelativeDocumentMoniker": "ForbiddenWordSearchesApp\\Helpers\\FileWorkHelper.cs",
-              "ToolTip": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\Helpers\\FileWorkHelper.cs",
-              "RelativeToolTip": "ForbiddenWordSearchesApp\\Helpers\\FileWorkHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-23T04:34:13.334Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ForbiddenWord.cs",
-              "DocumentMoniker": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWord.cs",
-              "RelativeDocumentMoniker": "ForbiddenWordSearchesApp\\ForbiddenWord.cs",
-              "ToolTip": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWord.cs",
-              "RelativeToolTip": "ForbiddenWordSearchesApp\\ForbiddenWord.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-23T04:27:35.761Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "ForbiddenWordSearchesApp\\MainWindow.xaml",
-              "ToolTip": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\MainWindow.xaml",
-              "RelativeToolTip": "ForbiddenWordSearchesApp\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-23T04:20:04.756Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "ForbiddenWordSearchesApp\\MainWindow.xaml.cs",
-              "ToolTip": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\MainWindow.xaml.cs",
-              "RelativeToolTip": "ForbiddenWordSearchesApp\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAP0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-23T04:19:59.869Z",
-              "EditorCaption": ""
             }
           ]
         }
