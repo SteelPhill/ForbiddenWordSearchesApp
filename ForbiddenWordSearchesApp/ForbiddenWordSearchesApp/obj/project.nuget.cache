@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "syC89t0mX2o=",
+  "dgSpecHash": "osFiZx7NdQU=",
   "success": true,
   "projectFilePath": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\shnai\\.nuget\\packages\\nito.asyncex\\5.1.2\\nito.asyncex.5.1.2.nupkg.sha512",
+    "C:\\Users\\shnai\\.nuget\\packages\\nito.asyncex.context\\5.1.2\\nito.asyncex.context.5.1.2.nupkg.sha512",
+    "C:\\Users\\shnai\\.nuget\\packages\\nito.asyncex.coordination\\5.1.2\\nito.asyncex.coordination.5.1.2.nupkg.sha512",
+    "C:\\Users\\shnai\\.nuget\\packages\\nito.asyncex.interop.waithandles\\5.1.2\\nito.asyncex.interop.waithandles.5.1.2.nupkg.sha512",
+    "C:\\Users\\shnai\\.nuget\\packages\\nito.asyncex.oop\\5.1.2\\nito.asyncex.oop.5.1.2.nupkg.sha512",
+    "C:\\Users\\shnai\\.nuget\\packages\\nito.asyncex.tasks\\5.1.2\\nito.asyncex.tasks.5.1.2.nupkg.sha512",
+    "C:\\Users\\shnai\\.nuget\\packages\\nito.cancellation\\1.1.2\\nito.cancellation.1.1.2.nupkg.sha512",
+    "C:\\Users\\shnai\\.nuget\\packages\\nito.collections.deque\\1.1.1\\nito.collections.deque.1.1.1.nupkg.sha512",
+    "C:\\Users\\shnai\\.nuget\\packages\\nito.disposables\\2.2.1\\nito.disposables.2.2.1.nupkg.sha512",
+    "C:\\Users\\shnai\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512"
+  ],
   "logs": []
 }
