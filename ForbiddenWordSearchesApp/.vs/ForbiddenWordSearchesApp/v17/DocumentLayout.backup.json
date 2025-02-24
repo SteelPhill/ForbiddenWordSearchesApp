@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}|ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp.csproj|d:\\repositories\\forbiddenwordsearchesapp\\forbiddenwordsearchesapp\\forbiddenwordsearchesapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}|ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp.csproj|solutionrelative:forbiddenwordsearchesapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}|ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp.csproj|d:\\repositories\\forbiddenwordsearchesapp\\forbiddenwordsearchesapp\\forbiddenwordsearchesapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}|ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp.csproj|solutionrelative:forbiddenwordsearchesapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}|ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp.csproj|d:\\repositories\\forbiddenwordsearchesapp\\forbiddenwordsearchesapp\\forbiddenwordsearchesapp\\logic\\forbiddenwordsearcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C8482E7-4FDC-46A7-AA74-D2F97E3ED405}|ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp.csproj|solutionrelative:forbiddenwordsearchesapp\\logic\\forbiddenwordsearcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,15 +30,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\App.xaml.cs",
-              "RelativeDocumentMoniker": "ForbiddenWordSearchesApp\\App.xaml.cs",
-              "ToolTip": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\App.xaml.cs",
-              "RelativeToolTip": "ForbiddenWordSearchesApp\\App.xaml.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAiAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ForbiddenWordSearcher.cs",
+              "DocumentMoniker": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\Logic\\ForbiddenWordSearcher.cs",
+              "RelativeDocumentMoniker": "ForbiddenWordSearchesApp\\Logic\\ForbiddenWordSearcher.cs",
+              "ToolTip": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\Logic\\ForbiddenWordSearcher.cs",
+              "RelativeToolTip": "ForbiddenWordSearchesApp\\Logic\\ForbiddenWordSearcher.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAGUAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-23T12:14:12.111Z",
+              "WhenOpened": "2025-02-24T19:33:06.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "ForbiddenWordSearchesApp\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\Repositories\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\ForbiddenWordSearchesApp\\MainWindow.xaml.cs",
+              "RelativeToolTip": "ForbiddenWordSearchesApp\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAAAKYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T19:31:28.64Z",
               "EditorCaption": ""
             }
           ]

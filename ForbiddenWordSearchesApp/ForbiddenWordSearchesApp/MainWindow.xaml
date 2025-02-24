@@ -16,13 +16,13 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
 
         <Border Grid.Row="0"
@@ -65,7 +65,7 @@
                      Margin="5, 0, 5, 0"
                      BorderBrush="Gray"
                      BorderThickness="1"
-					 Text=""/>
+					 Text="" />
         </StackPanel>
 
         <StackPanel Orientation="Vertical"                  
@@ -85,7 +85,7 @@
                      Margin="5, 0, 5, 0"
                      BorderBrush="Gray"
                      BorderThickness="1"
-                     Text="D:\ФИЛИПП\Временные\DEST\BWords.txt"/>
+                     Text="" />
         </StackPanel>
 
         <StackPanel Orientation="Vertical"                  
@@ -105,7 +105,7 @@
 					 Margin="5, 0, 5, 0"
 					 BorderBrush="Gray"
 					 BorderThickness="1"
-					 Text="D:\ФИЛИПП\Временные\DEST\SOURCE" />
+					 Text="" />
         </StackPanel>
 
         <StackPanel Orientation="Vertical"                  
@@ -125,7 +125,7 @@
                      Margin="5, 0, 5, 0"
                      BorderBrush="Gray"
                      BorderThickness="1"
-					 Text="D:\ФИЛИПП\Временные\DEST"/>
+					 Text="" />
         </StackPanel>
 
         <StackPanel Orientation="Vertical"                  

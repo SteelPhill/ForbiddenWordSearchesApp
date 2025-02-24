@@ -6,13 +6,12 @@ public static class FileWorkHelper
 {
     public static string GetCorrectFilePath(string filePath)
     {
-        string folderPath = Path.GetDirectoryName(filePath)!;
+        var folderPath = Path.GetDirectoryName(filePath)!;
 
         for (var i = 1; ; i++)
         {
-            string newFilePath = Path.Combine(
-                folderPath,
-                $"{Path.GetFileNameWithoutExtension(filePath)}_{i}{Path.GetExtension(filePath)}");
+            var newName = $"{Path.GetFileNameWithoutExtension(filePath)}_{i}{Path.GetExtension(filePath)}";
+            var newFilePath = Path.Combine(folderPath, newName);
 
             if (!File.Exists(newFilePath))
                 return newFilePath;
@@ -21,7 +20,7 @@ public static class FileWorkHelper
 
     public static int CountFiles(string path)
     {
-        int fileCount = 0;
+        var fileCount = 0;
 
         try
         {
@@ -34,8 +33,8 @@ public static class FileWorkHelper
 
         try
         {
-            foreach (string subDir in Directory.EnumerateDirectories(path))
-                fileCount += CountFiles(subDir);
+            foreach (var subFolder in Directory.EnumerateDirectories(path))
+                fileCount += CountFiles(subFolder);
         }
         catch (Exception)
         {

@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -14,11 +15,12 @@ namespace ForbiddenWordSearchesApp;
 public partial class MainWindow : Window
 {
     private readonly ForbiddenWordSearcher _forbiddenWordSearcher = new();
+    private static readonly StringBuilder _stringBuilder = new();
     private CancellationTokenSource _cancellationTokenSource = new();
 
     public MainWindow()
     {
-        InitializeComponent();
+        InitializeComponent();       
     }
 
     private async void Start_Click(object sender, RoutedEventArgs e)
@@ -27,6 +29,9 @@ public partial class MainWindow : Window
         {
             StartButton.IsEnabled = false;
             PauseButton.IsEnabled = true;
+
+            ResultTextBlock.Text = "Поиск...";
+
             _forbiddenWordSearcher.ResumeSearch();
             return;
         }
@@ -35,41 +40,42 @@ public partial class MainWindow : Window
         {
             CheckWhetherPossibleStart();
         }
-        catch (Exception ex)
+        catch (Exception exception)
         {
-            ResultTextBlock.Text = ex.Message;
+            _stringBuilder.Clear();
+            _stringBuilder.AppendLine();
+            _stringBuilder.AppendLine(exception.Message);
+            File.AppendAllText(Constants.LogFilePath, _stringBuilder.ToString());
+
+            ResultTextBlock.Text = exception.Message;
             return;
         }
 
         _cancellationTokenSource = new CancellationTokenSource();
 
-        var forbiddenWords = new List<string>();
+        var searchWords = new List<string>();
 
         if (!string.IsNullOrEmpty(FirstTextBox.Text))
-        {
-            forbiddenWords.AddRange(
-                FirstTextBox.Text.Split(Constants.Separators, StringSplitOptions.RemoveEmptyEntries));
-
-            FirstTextBox.IsReadOnly = true;
-            FirstTextBox.Background = Brushes.DarkGray;
-        }
+            searchWords.AddRange(FirstTextBox.Text.Split(Constants.Separators, StringSplitOptions.RemoveEmptyEntries));
 
         if (!string.IsNullOrEmpty(SecondTextBox.Text))
         {
             if (!File.Exists(SecondTextBox.Text))
-            {
+            {                           
                 ResultTextBlock.Text = "Ошибка: неверно указан путь к файлу с запрещёнными словами!";
+
+                _stringBuilder.Clear();
+                _stringBuilder.AppendLine();
+                _stringBuilder.AppendLine(ResultTextBlock.Text);
+                File.AppendAllText(Constants.LogFilePath, _stringBuilder.ToString());
+
                 return;
             }
 
             var fileContent = await File.ReadAllTextAsync(SecondTextBox.Text, _cancellationTokenSource.Token);
 
-            forbiddenWords.AddRange(
-                fileContent.Split(Constants.Separators, StringSplitOptions.RemoveEmptyEntries));
-
-            SecondTextBox.IsReadOnly = true;
-            SecondTextBox.Background = Brushes.DarkGray;
-        }      
+            searchWords.AddRange(fileContent.Split(Constants.Separators, StringSplitOptions.RemoveEmptyEntries));
+        }
 
         ProgressBar.Value = 0;
         ProgressBar.Maximum = FileWorkHelper.CountFiles(ThirdTextBox.Text);
@@ -78,9 +84,13 @@ public partial class MainWindow : Window
 
         StartButton.IsEnabled = false;
         PauseButton.IsEnabled = true;
-        StopButton.IsEnabled = true;       
+        StopButton.IsEnabled = true;
 
-        ThirdTextBox.IsReadOnly = FourthTextBox.IsReadOnly = true;
+        FirstTextBox.IsReadOnly 
+            = SecondTextBox.IsReadOnly
+            = ThirdTextBox.IsReadOnly
+            = FourthTextBox.IsReadOnly
+            = true;
 
         FirstTextBox.Background
             = SecondTextBox.Background
@@ -90,29 +100,52 @@ public partial class MainWindow : Window
 
         var progress = new Progress<int>(value => ProgressBar.Value += value);
 
+        var resultFolder = Path.Combine(FourthTextBox.Text, $"SearchResult_{DateTime.Now:yyyyMMddHHmmss}");
+
         try
         {
-            ResultTextBlock.Text = "Поиск...";
+            ResultTextBlock.Text = "Поиск...";           
+
+            _stringBuilder.Clear();
+            _stringBuilder.AppendLine();
+            _stringBuilder.AppendLine($"Директория поиска: {ThirdTextBox.Text}");
+            _stringBuilder.AppendLine($"Директория с результатами: {resultFolder}");
+            _stringBuilder.Append("Запрещённые слова: ");
+            searchWords.ForEach(s => _stringBuilder.Append($"{s} "));
+            _stringBuilder.AppendLine();
+            File.AppendAllText(Constants.LogFilePath, _stringBuilder.ToString());
 
             await _forbiddenWordSearcher.SearchAsync(
                 ThirdTextBox.Text,
-                FourthTextBox.Text,
-                forbiddenWords,
+                resultFolder,
+                searchWords,
                 progress,
                 _cancellationTokenSource.Token);
 
             ResultTextBlock.Text = $"Поиск завершен!{Environment.NewLine}{Environment.NewLine}";
-
-            ResultTextBlock.Text += $"Результаты поиска сохранены в директории:{Environment.NewLine}{Path
-                .Combine(FourthTextBox.Text, $"SearchResult_{DateTime.Now:yyyyMMddHHmmss}")}";
+            ResultTextBlock.Text += $"Результаты поиска сохранены в директории:{Environment.NewLine}{resultFolder}";
         }
         catch (OperationCanceledException)
         {
             ResultTextBlock.Text = "Поиск отменён!";
+
+            _stringBuilder.Clear();
+            _stringBuilder.AppendLine();
+            _stringBuilder.AppendLine(ResultTextBlock.Text);
+            File.AppendAllText(Constants.LogFilePath, _stringBuilder.ToString());
+
+            Directory.Delete(resultFolder, recursive: true);
         }
         catch (Exception)
         {
             ResultTextBlock.Text = "Неизвестная ошибка! Поиск отменён!";
+
+            _stringBuilder.Clear();
+            _stringBuilder.AppendLine();
+            _stringBuilder.AppendLine(ResultTextBlock.Text);
+            File.AppendAllText(Constants.LogFilePath, _stringBuilder.ToString());
+
+            Directory.Delete(resultFolder, recursive: true);
         }
         finally
         {
@@ -124,11 +157,15 @@ public partial class MainWindow : Window
     {
         StartButton.IsEnabled = true;
         PauseButton.IsEnabled = false;
+
+        ResultTextBlock.Text = "Пауза!";
+
         _forbiddenWordSearcher.PauseSearch();
     }
 
     private void Stop_Click(object sender, RoutedEventArgs e)
     {
+        ProgressBar.Value = 0;
         StopSearched();
     }
 
@@ -139,18 +176,19 @@ public partial class MainWindow : Window
         StopButton.IsEnabled = false;
 
         if (!string.IsNullOrEmpty(FirstTextBox.Text))
+        {
             FirstTextBox.IsReadOnly = false;
+            FirstTextBox.Background = Brushes.White;
+        }
 
         if (!string.IsNullOrEmpty(SecondTextBox.Text))
+        {
             SecondTextBox.IsReadOnly = false;
+            SecondTextBox.Background = Brushes.White;
+        }
 
         ThirdTextBox.IsReadOnly = FourthTextBox.IsReadOnly = false;
-
-        FirstTextBox.Background
-            = SecondTextBox.Background
-            = ThirdTextBox.Background
-            = FourthTextBox.Background
-            = Brushes.White;
+        ThirdTextBox.Background = FourthTextBox.Background = Brushes.White;
 
         Cancel();
         _forbiddenWordSearcher.ResumeSearch();
