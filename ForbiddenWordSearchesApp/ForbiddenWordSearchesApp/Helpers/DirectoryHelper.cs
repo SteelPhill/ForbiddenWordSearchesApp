@@ -2,15 +2,15 @@
 
 namespace ForbiddenWordSearchesApp.Helpers;
 
-public static class FileWorkHelper
+public static class DirectoryHelper
 {
-    public static string GetCorrectFilePath(string filePath)
+    public static string GetCorrectFilePath(string path)
     {
-        var folderPath = Path.GetDirectoryName(filePath)!;
+        var folderPath = Path.GetDirectoryName(path)!;
 
         for (var i = 1; ; i++)
         {
-            var newName = $"{Path.GetFileNameWithoutExtension(filePath)}_{i}{Path.GetExtension(filePath)}";
+            var newName = $"{Path.GetFileNameWithoutExtension(path)}_{i}{Path.GetExtension(path)}";
             var newFilePath = Path.Combine(folderPath, newName);
 
             if (!File.Exists(newFilePath))

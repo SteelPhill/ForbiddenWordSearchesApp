@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ForbiddenWordSearchesApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20be7929a19d6a352d47746b59c69d5fd5dbc2ee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c94f5ceb5ca72a142d76e19f3ea133eb5e24d57c")]
 [assembly: System.Reflection.AssemblyProductAttribute("ForbiddenWordSearchesApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ForbiddenWordSearchesApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

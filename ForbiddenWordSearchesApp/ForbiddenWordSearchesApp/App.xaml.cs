@@ -11,9 +11,9 @@ namespace ForbiddenWordSearchesApp;
 public partial class App : Application
 {
     private static Mutex? _mutex;
-    private static readonly StringBuilder _stringBuilder = new();
+    private readonly StringBuilder _stringBuilder = new();
 
-    protected override void OnStartup(StartupEventArgs e)
+    protected override async void OnStartup(StartupEventArgs e)
     {
         _mutex = new Mutex(true, Constants.AppMutexName, out var createdNew);       
 
@@ -31,7 +31,9 @@ public partial class App : Application
             _stringBuilder.AppendLine($"{DateTime.Now} Запуск в тихом режиме...");
             File.AppendAllText(Constants.LogFilePath, _stringBuilder.ToString());
 
-            Task.Run(async () => await RunInSilentMode(e.Args));
+            ShutdownMode = ShutdownMode.OnExplicitShutdown;
+
+            await RunInSilentMode(e.Args);
 
             Current.Shutdown();
             return;
@@ -40,10 +42,13 @@ public partial class App : Application
         _stringBuilder.AppendLine($"{DateTime.Now} Запуск в оконном режиме...");
         File.AppendAllText(Constants.LogFilePath, _stringBuilder.ToString());
 
+        var mainWindow = new MainWindow(); 
+        mainWindow.Show();
+
         base.OnStartup(e);
     }
 
-    private static async Task RunInSilentMode(string[] args)
+    private async Task RunInSilentMode(string[] args)
     {
         var searchFolder = "";
         var resultFolder = "";
@@ -98,14 +103,13 @@ public partial class App : Application
             _stringBuilder.AppendLine();
             File.AppendAllText(Constants.LogFilePath, _stringBuilder.ToString());          
 
-            resultFolder = Path.Combine(resultFolder, $"SearchResult_{DateTime.Now:yyyyMMddHHmmss}");
+            resultFolder = Path.Combine(resultFolder, $"SearchResult_{DateTime.Now:dd-MM-yyyy_HH-mm-ss}");
 
             await forbiddenWordSearcher.SearchAsync(
                 searchFolder,
                 resultFolder,
                 searchWords,
-                new Progress<int>(),
-                CancellationToken.None);            
+                new Progress<int>());            
         }
         catch (Exception exception)
         {

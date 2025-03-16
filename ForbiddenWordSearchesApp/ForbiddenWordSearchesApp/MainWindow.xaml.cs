@@ -15,8 +15,7 @@ namespace ForbiddenWordSearchesApp;
 public partial class MainWindow : Window
 {
     private readonly ForbiddenWordSearcher _forbiddenWordSearcher = new();
-    private static readonly StringBuilder _stringBuilder = new();
-    private CancellationTokenSource _cancellationTokenSource = new();
+    private readonly StringBuilder _stringBuilder = new();   
 
     public MainWindow()
     {
@@ -25,7 +24,7 @@ public partial class MainWindow : Window
 
     private async void Start_Click(object sender, RoutedEventArgs e)
     {
-        if (!_forbiddenWordSearcher.IsSetSearch())
+        if (_forbiddenWordSearcher.IsSearchPaused())
         {
             StartButton.IsEnabled = false;
             PauseButton.IsEnabled = true;
@@ -51,8 +50,6 @@ public partial class MainWindow : Window
             return;
         }
 
-        _cancellationTokenSource = new CancellationTokenSource();
-
         var searchWords = new List<string>();
 
         if (!string.IsNullOrEmpty(FirstTextBox.Text))
@@ -72,13 +69,13 @@ public partial class MainWindow : Window
                 return;
             }
 
-            var fileContent = await File.ReadAllTextAsync(SecondTextBox.Text, _cancellationTokenSource.Token);
+            var fileContent = await File.ReadAllTextAsync(SecondTextBox.Text);
 
             searchWords.AddRange(fileContent.Split(Constants.Separators, StringSplitOptions.RemoveEmptyEntries));
         }
 
         ProgressBar.Value = 0;
-        ProgressBar.Maximum = FileWorkHelper.CountFiles(ThirdTextBox.Text);
+        ProgressBar.Maximum = DirectoryHelper.CountFiles(ThirdTextBox.Text);
 
         ResultTextBlock.Text = "";
 
@@ -100,7 +97,7 @@ public partial class MainWindow : Window
 
         var progress = new Progress<int>(value => ProgressBar.Value += value);
 
-        var resultFolder = Path.Combine(FourthTextBox.Text, $"SearchResult_{DateTime.Now:yyyyMMddHHmmss}");
+        var resultFolder = Path.Combine(FourthTextBox.Text, $"SearchResult_{DateTime.Now:dd-MM-yyyy_HH-mm-ss}");
 
         try
         {
@@ -119,8 +116,7 @@ public partial class MainWindow : Window
                 ThirdTextBox.Text,
                 resultFolder,
                 searchWords,
-                progress,
-                _cancellationTokenSource.Token);
+                progress);
 
             ResultTextBlock.Text = $"Поиск завершен!{Environment.NewLine}{Environment.NewLine}";
             ResultTextBlock.Text += $"Результаты поиска сохранены в директории:{Environment.NewLine}{resultFolder}";
@@ -190,7 +186,7 @@ public partial class MainWindow : Window
         ThirdTextBox.IsReadOnly = FourthTextBox.IsReadOnly = false;
         ThirdTextBox.Background = FourthTextBox.Background = Brushes.White;
 
-        Cancel();
+        _forbiddenWordSearcher.CancelSearch();
         _forbiddenWordSearcher.ResumeSearch();
     }
 
@@ -223,7 +219,5 @@ public partial class MainWindow : Window
             FirstTextBox.IsReadOnly = true;
             FirstTextBox.Background = Brushes.DarkGray;
         }
-    }
-
-    private void Cancel() => _cancellationTokenSource.Cancel();
+    }  
 }
